@@ -1,0 +1,12 @@
+services:
+  dvwa:
+    image: vulnerables/web-dvwa
+    container_name: dvwa
+    ports:
+      - "127.0.0.1:8080:80"
+    volumes:
+      - dvwa_db:/var/lib/mysql
+    restart: "no"
+
+volumes:
+  dvwa_db:
