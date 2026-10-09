@@ -7,13 +7,16 @@ $motdepasse  = $_POST['motdepasse'];
 
 // Requête construite par concaténation des données reçues de l'utilisateur
 $requete = "SELECT * FROM agents
-            WHERE identifiant = '$identifiant'
-            AND motdepasse = '$motdepasse'";
+            WHERE identifiant = ?
+            AND motdepasse = ?";
 
-$resultat = mysqli_query($connexion, $requete);
+$stmt = mysqli_prepare($connexion, $requete);
+mysqli_stmt_bind_param($stmt, "ss", $identifiant, $motdepasse);
+mysqli_stmt_execute($stmt);
+$resultat = mysqli_stmt_get_result($stmt);
 
 if (mysqli_num_rows($resultat) > 0) {
-    echo "Bienvenue " . $_GET['nom'];   // le nom est réaffiché tel quel dans la page
+    echo "Bienvenue " . htmlspecialchars($_GET['nom'], ENT_QUOTES, 'UTF-8');
     // ... ouverture de la session ...
 } else {
     echo "Identifiant ou mot de passe incorrect.";

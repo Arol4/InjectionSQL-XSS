@@ -1,5 +1,5 @@
-KIT DE L'EXERCICE PRATIQUE 3
-Cours : Introduction a la cybersecurite et a la cybercriminalite - IME
+<b>KIT DE L'EXERCICE PRATIQUE 3</b><br>
+Cours : Introduction a la cybersecurite et a la cybercriminalite - IME<br>
 Seance 3 : securite des applications web, formes de cybercriminalite
 
 Tous les fichiers de ce dossier sont fictifs. Ils ont ete crees pour le cours
